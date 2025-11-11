@@ -6,28 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-   public function up(): void
-{
-    Schema::create('mangas', function (Blueprint $table) {
-        $table->id();
-        $table->string('title');
-        $table->integer('number')->nullable();
-        $table->integer('year')->nullable();
-        $table->string('category')->nullable();
-        $table->text('description')->nullable();
-        $table->string('image_path')->nullable();
-        $table->foreignId('user_id')->constrained()->onDelete('cascade');
-        $table->timestamps();
-    });
-}
+    public function up(): void
+    {
+        Schema::create('mangas', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->integer('number');
+            $table->integer('year');
+            $table->string('cover')->nullable();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
+        });
+    }
 
-
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('mangas');

@@ -3,69 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Manga Blog')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title', 'MangaBlog')</title>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #fafafa;
-            font-family: 'Segoe UI';
-        }
-        nav.navbar {
-            background-color: #d32f2f;
-        }
-        .navbar-brand {
-            font-weight: bold;
-            color: white !important;
-        }
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-        }
-        .nav-link:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background: #222;
-            color: #ccc;
-            padding: 20px;
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 </head>
+<body class="bg-light" style="font-family: 'Figtree', sans-serif;">
 
-<body>
+    <!-- NAVBAR -->
+    @include('layouts.navigation')
 
-    {{-- NAVBAR --}}
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">🩷 Manga Blog</a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('mangas.index') }}">I miei Manga</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">Chi siamo</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contatti</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    {{-- CONTENUTO PRINCIPALE --}}
-    <main class="container py-4">
+    <!-- CONTENUTO PRINCIPALE -->
+    <main class="container py-5">
         @yield('content')
     </main>
 
-    {{-- FOOTER --}}
-    <footer>
-        <p>Manga Blog © {{ date('Y') }} | Creato da Bianca</p>
+    <!-- FOOTER -->
+    <footer class="text-center py-4 mt-5 bg-dark text-light shadow-lg">
+        <p class="mb-0">© {{ date('Y') }} <strong>MangaBlog</strong> | Progetto di <span class="text-warning">Bianca 💫</span></p>
+        <p class="small mb-0">Creato con Laravel & Bootstrap 💻</p>
     </footer>
 
+    <!-- SCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

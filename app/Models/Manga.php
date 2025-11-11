@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
 
 class Manga extends Model
 {
@@ -12,16 +11,15 @@ class Manga extends Model
 
     protected $fillable = [
         'title',
+        'description',
         'number',
         'year',
-        'category',
-        'description',
+        'category_id',
         'image_path',
-        'user_id',
     ];
 
-    public function user()
+    public function category()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Category::class);
     }
 }

@@ -1,0 +1,117 @@
+/* 🌸 --- Stile generale del sito Manga Blog --- 🌸 */
+
+/* Font e colore di sfondo globale */
+body {
+    font-family: 'Figtree', sans-serif;
+    background-color: #f9f9fb;
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #5b2c83 !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar .nav-link {
+    color: #fff !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.navbar .nav-link:hover {
+    color: #ffd700 !important;
+}
+
+/* Titoli principali */
+h1, h2, h3, h4 {
+    color: #4b0082;
+    font-weight: 600;
+}
+
+/* --- Card dei Manga --- */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Immagini dei manga */
+.card img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Corpo della card */
+.card-body {
+    background-color: #fff;
+    padding: 1rem 1.2rem;
+}
+
+/* Bottoni */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #6a0dad;
+    border-color: #6a0dad;
+}
+.btn-primary:hover {
+    background-color: #580b8d;
+    border-color: #580b8d;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+    color: #000;
+}
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+.btn-danger:hover {
+    background-color: #b02a37;
+}
+
+/* Form */
+form label {
+    font-weight: 500;
+}
+form input, form select, form textarea {
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: #5b2c83;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Effetti per messaggi di successo o errore */
+.alert-success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border: none;
+}
+.alert-danger {
+    background-color: #f8d7da;
+    color: #842029;
+    border: none;
+}
